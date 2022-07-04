@@ -15,79 +15,101 @@ body {
   display: flex;
   flex-direction: column;
   width: 400px;
-  gap: 15px;
+  gap: 25px;
 
   .form-group {
     position: relative;
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.5s;
+    }
+
+    input,
+    textarea {
+      border-width: 0 0 1px 0;
+      border-color: black;
+      border-style: solid;
+      padding: 5px;
+      width: 100%;
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:focus + label,
+    textarea:not(:placeholder-shown) + label {
+      position: absolute;
+      top: -25px;
+      transform: scale(0.95);
+    }
+
+    input:valid + label,
+    textarea:valid + label {
+      color: #00711e;
+    }
   }
 
-  input,
-  textarea {
-    border-width: 0 0 1px 0;
-    border-color: black;
-    border-style: solid;
-    padding: 5px;
+  .submit-button {
+    width: 270px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    .check-box {
+      width: 80px;
+      height: 80px;
+      border-radius: 40px;
+      box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      right: -40px;
+      opacity: 0;
+
+      svg {
+        width: 40px;
+        margin: 20px;
+
+        path {
+          stroke-width: 3;
+          stroke: #fff;
+          stroke-dasharray: 34;
+          stroke-dashoffset: 34;
+          stroke-linecap: round;
+        }
+      }
+    }
+
+    &.active {
+      background: #00711e;
+      transition: 1s;
+
+      .check-box {
+        right: 0;
+        opacity: 1;
+        transition: 1s;
+      }
+
+      p {
+        margin-right: 125px;
+        transition: 1s;
+      }
+
+      svg path {
+        stroke-dashoffset: 0;
+        transition: 1s;
+        transition-delay: 1s;
+      }
+    }
   }
-}
-
-button {
-  width: 270px;
-  height: 80px;
-  border: none;
-  outline: none;
-  background: #2f2f2f;
-  color: #fff;
-  font-size: 22px;
-  border-radius: 40px;
-  text-align: center;
-  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.check-box {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
-  box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  right: -40px;
-  opacity: 0;
-}
-
-.check-box svg {
-  width: 40px;
-  margin: 20px;
-}
-
-svg path {
-  stroke-width: 3;
-  stroke: #fff;
-  stroke-dasharray: 34;
-  stroke-dashoffset: 34;
-  stroke-linecap: round;
-}
-
-.active {
-  background: #00711e;
-  transition: 1s;
-}
-
-.active .check-box {
-  right: 0;
-  opacity: 1;
-  transition: 1s;
-}
-
-.active p {
-  margin-right: 125px;
-  transition: 1s;
-}
-
-.active svg path {
-  stroke-dashoffset: 0;
-  transition: 1s;
-  transition-delay: 1s;
 }

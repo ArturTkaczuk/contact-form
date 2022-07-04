@@ -27,22 +27,46 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 400px;
-  gap: 15px;
+  gap: 25px;
 }
 
 .contact-form .form-group {
   position: relative;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form .form-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
   border-width: 0 0 1px 0;
   border-color: black;
   border-style: solid;
   padding: 5px;
+  width: 100%;
 }
 
-button {
+.contact-form .form-group input:focus + label,
+.contact-form .form-group input:not(:placeholder-shown) + label,
+.contact-form .form-group textarea:focus + label,
+.contact-form .form-group textarea:not(:placeholder-shown) + label {
+  position: absolute;
+  top: -25px;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.contact-form .form-group input:valid + label,
+.contact-form .form-group textarea:valid + label {
+  color: #00711e;
+}
+
+.contact-form .submit-button {
   width: 270px;
   height: 80px;
   border: none;
@@ -59,7 +83,7 @@ button {
   cursor: pointer;
 }
 
-.check-box {
+.contact-form .submit-button .check-box {
   width: 80px;
   height: 80px;
   border-radius: 40px;
@@ -71,12 +95,12 @@ button {
   opacity: 0;
 }
 
-.check-box svg {
+.contact-form .submit-button .check-box svg {
   width: 40px;
   margin: 20px;
 }
 
-svg path {
+.contact-form .submit-button .check-box svg path {
   stroke-width: 3;
   stroke: #fff;
   stroke-dasharray: 34;
@@ -84,26 +108,26 @@ svg path {
   stroke-linecap: round;
 }
 
-.active {
+.contact-form .submit-button.active {
   background: #00711e;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.active .check-box {
+.contact-form .submit-button.active .check-box {
   right: 0;
   opacity: 1;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.active p {
+.contact-form .submit-button.active p {
   margin-right: 125px;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.active svg path {
+.contact-form .submit-button.active svg path {
   stroke-dashoffset: 0;
   -webkit-transition: 1s;
   transition: 1s;

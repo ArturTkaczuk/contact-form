@@ -16,20 +16,25 @@
         method="POST"
       >
         <div class="form-group">
+          <input type="text" name="name" placeholder=" " required />
           <label>Full Name</label>
-          <input type="text" name="name" required />
         </div>
         <div class="form-group">
+          <input type="email" name="email" placeholder=" " required />
           <label>Email Address</label>
-          <input type="email" name="email" required />
         </div>
         <div class="form-group">
+          <input type="text" name="subject" placeholder=" " required />
           <label>Subject</label>
-          <input type="text" name="subject" required />
         </div>
         <div class="form-group">
+          <textarea
+            name="message"
+            rows="10"
+            placeholder=" "
+            required
+          ></textarea>
           <label>Your Message</label>
-          <textarea name="message" rows="10" required></textarea>
         </div>
         <!-- _honey - anti spam input field -->
         <input type="text" name="_honey" style="display: none" />
@@ -40,7 +45,7 @@
           value="Thank you for contacting me! I read every message and typically respond within 48 hours if a reply is required. If it’s urgent, I encourage you to call me at + 48 600 989 818 Have a wonderful day! -	Artur Tkaczuk
     "
         />
-        <button type="submit" class="submit-btn">
+        <button type="submit" class="submit-button">
           <p class="submit-button-text">Submit</p>
           <div class="check-box">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50">
