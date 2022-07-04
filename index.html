@@ -16,25 +16,38 @@
         method="POST"
       >
         <div class="form-group">
-          <input type="text" name="name" placeholder=" " required />
-          <label>Full Name</label>
+          <input id="name" type="text" name="name" placeholder=" " required />
+          <label for="name">Full Name</label>
         </div>
         <div class="form-group">
-          <input type="email" name="email" placeholder=" " required />
-          <label>Email Address</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder=" "
+            required
+          />
+          <label for="email">Email Address</label>
         </div>
         <div class="form-group">
-          <input type="text" name="subject" placeholder=" " required />
-          <label>Subject</label>
+          <input
+            id="subject"
+            type="text"
+            name="subject"
+            placeholder=" "
+            required
+          />
+          <label for="subject">Subject</label>
         </div>
         <div class="form-group">
           <textarea
+            id="message"
             name="message"
             rows="10"
             placeholder=" "
             required
           ></textarea>
-          <label>Your Message</label>
+          <label for="name">Your Message</label>
         </div>
         <!-- _honey - anti spam input field -->
         <input type="text" name="_honey" style="display: none" />
@@ -45,14 +58,9 @@
           value="Thank you for contacting me! I read every message and typically respond within 48 hours if a reply is required. If it’s urgent, I encourage you to call me at + 48 600 989 818 Have a wonderful day! -	Artur Tkaczuk
     "
         />
-        <button type="submit" class="submit-button">
-          <p class="submit-button-text">Submit</p>
-          <div class="check-box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50">
-              <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-            </svg>
-          </div>
-        </button>
+        <!-- _next - page after submit -->
+        <input type="hidden" name="_next" value="https://google.com" />
+        <button type="submit" class="submit-button">Submit</button>
       </form>
     </div>
     <script src="index.js"></script>
