@@ -18,7 +18,11 @@ body {
           justify-content: center;
 }
 
-.contact-form {
+.form-container h2 {
+  margin-bottom: 25px;
+}
+
+.form-container .contact-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,45 +32,56 @@ body {
           flex-direction: column;
   width: 400px;
   gap: 25px;
+  font-size: 1rem;
 }
 
-.contact-form .form-group {
+.form-container .contact-form .form-group {
   position: relative;
 }
 
-.contact-form .form-group label {
+.form-container .contact-form .form-group input,
+.form-container .contact-form .form-group textarea {
+  border-width: 0 0 1px 0;
+  border-color: black;
+  border-style: solid;
+  padding: 5px 0;
+  width: 100%;
+  outline: 0;
+  background-color: transparent;
+}
+
+.form-container .contact-form .form-group textarea {
+  resize: none;
+}
+
+.form-container .contact-form .form-group label {
   position: absolute;
   top: 0;
   left: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: -1;
 }
 
-.contact-form .form-group input,
-.contact-form .form-group textarea {
-  border-width: 0 0 1px 0;
-  border-color: black;
-  border-style: solid;
-  padding: 5px;
-  width: 100%;
-}
-
-.contact-form .form-group input:focus + label,
-.contact-form .form-group input:not(:placeholder-shown) + label,
-.contact-form .form-group textarea:focus + label,
-.contact-form .form-group textarea:not(:placeholder-shown) + label {
+.form-container .contact-form .form-group input:focus + label,
+.form-container .contact-form .form-group input:not(:placeholder-shown) + label,
+.form-container .contact-form .form-group textarea:focus + label,
+.form-container .contact-form .form-group textarea:not(:placeholder-shown) + label {
   position: absolute;
-  top: -25px;
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  top: -20px;
+  font-size: 0.95rem;
 }
 
-.contact-form .form-group input:valid + label,
-.contact-form .form-group textarea:valid + label {
+.form-container .contact-form .form-group input:valid + label,
+.form-container .contact-form .form-group textarea:valid + label {
   color: #00711e;
 }
 
-.contact-form .submit-button {
+.form-container .contact-form .submit-button {
   width: 270px;
   height: 80px;
   border: none;
@@ -83,7 +98,7 @@ body {
   cursor: pointer;
 }
 
-.contact-form .submit-button .check-box {
+.form-container .contact-form .submit-button .check-box {
   width: 80px;
   height: 80px;
   border-radius: 40px;
@@ -95,12 +110,12 @@ body {
   opacity: 0;
 }
 
-.contact-form .submit-button .check-box svg {
+.form-container .contact-form .submit-button .check-box svg {
   width: 40px;
   margin: 20px;
 }
 
-.contact-form .submit-button .check-box svg path {
+.form-container .contact-form .submit-button .check-box svg path {
   stroke-width: 3;
   stroke: #fff;
   stroke-dasharray: 34;
@@ -108,26 +123,26 @@ body {
   stroke-linecap: round;
 }
 
-.contact-form .submit-button.active {
+.form-container .contact-form .submit-button.active {
   background: #00711e;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.contact-form .submit-button.active .check-box {
+.form-container .contact-form .submit-button.active .check-box {
   right: 0;
   opacity: 1;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.contact-form .submit-button.active p {
+.form-container .contact-form .submit-button.active p {
   margin-right: 125px;
   -webkit-transition: 1s;
   transition: 1s;
 }
 
-.contact-form .submit-button.active svg path {
+.form-container .contact-form .submit-button.active svg path {
   stroke-dashoffset: 0;
   -webkit-transition: 1s;
   transition: 1s;
