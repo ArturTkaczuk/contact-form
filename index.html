@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact form</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>FormSubmit</h1>
+      <form
+        class="contact-form"
+        action="https://formsubmit.co/433d8e477676c54c5165304eaa919c9b"
+        method="POST"
+      >
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" name="subject" required />
+        </div>
+        <div class="form-group">
+          <label>Your Message</label>
+          <textarea name="message" rows="10" required></textarea>
+        </div>
+        <!-- _honey - anti spam input field -->
+        <input type="text" name="_honey" style="display: none" />
+        <!-- _autoresponse -->
+        <input
+          type="hidden"
+          name="_autoresponse"
+          value="Thank you for contacting me! I read every message and typically respond within 48 hours if a reply is required. If it’s urgent, I encourage you to call me at + 48 600 989 818 Have a wonderful day! -	Artur Tkaczuk
+    "
+        />
+        <button type="submit" class="submit-btn">
+          <p class="submit-button-text">Submit</p>
+          <div class="check-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 50 50">
+              <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
+          </div>
+        </button>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
