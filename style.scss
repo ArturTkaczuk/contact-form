@@ -12,6 +12,7 @@ body {
 }
 
 .form-container {
+  background-color: #e9e9e9;
   h2 {
     margin-bottom: 25px;
   }
@@ -22,12 +23,14 @@ body {
     width: 400px;
     gap: 25px;
     font-size: 1rem;
+    padding: 25px;
 
     .form-group {
       position: relative;
 
       input,
       textarea {
+        position: relative;
         border-width: 0 0 1px 0;
         border-color: black;
         border-style: solid;
@@ -35,6 +38,7 @@ body {
         width: 100%;
         outline: 0;
         background-color: transparent;
+        z-index: 2;
       }
 
       textarea {
@@ -47,7 +51,7 @@ body {
         left: 0;
         transition: 0.5s;
         user-select: none;
-        z-index: -1;
+        z-index: 1;
       }
 
       input:focus + label,
@@ -66,7 +70,18 @@ body {
     }
 
     .submit-button {
-      background-color: #fff;
+      width: 100px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+      background-color: #008e26;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(#008e26, 10%);
+      }
     }
   }
 }
